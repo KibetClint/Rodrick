@@ -1,23 +1,72 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
-import project5 from "@/assets/project-5.jpg";
-import project6 from "@/assets/project-6.jpg";
-import project7 from "@/assets/project-7.jpg";
+import project1 from "@/assets/p1.jpg";
+import project2 from "@/assets/p21.png";
+import project3 from "@/assets/p3.png";
+import project4 from "@/assets/p4.png";
+import project5 from "@/assets/p5.png";
+import project6 from "@/assets/p6.png";
+import project7 from "@/assets/p7.png";
 import headshot from "@/assets/headshot.png";
 
 const featuredProjects = [
-  { src: project1, title: "Promenade Mall", location: "Mombasa, Kenya", category: "Commercial", description: "Multipurpose mall — concept & preliminary design, technical design of foundations, building frame, slabs, retaining walls, underground water tanks, and steel trusses." },
-  { src: project2, title: "Reflection Villas", location: "Nairobi, Kenya", category: "Residential", description: "6-unit modern residential development — full structural design, concept through technical design of all RC, masonry and steel elements." },
-  { src: project3, title: "Vision City", location: "Kigali, Rwanda", category: "Mixed-Use", description: "Major mixed-use urban development involving structural engineering, roads, drainage, and utility infrastructure." },
-  { src: project4, title: "Erbil Airport Cargo Terminal", location: "Erbil, Iraq", category: "Aviation", description: "Air cargo terminal concept design — structural design and civil engineering works at Erbil International Airport." },
-  { src: project5, title: "UGHE Campus", location: "Butaro, Rwanda", category: "Institutional", description: "University of Global Health Equity campus — structural and civil engineering for academic and residential facilities." },
-  { src: project6, title: "Catchup", location: "Kigali, Rwanda", category: "Mixed-Use", description: "Mixed-use development featuring residential and commercial spaces with modern structural design and sustainable infrastructure." },
-  { src: project7, title: "Kigali Finance Square", location: "Kigali, Rwanda", category: "Commercial", description: "28-storey office tower, 26-storey hotel tower, and 7-storey conference block with post-tension slabs and suspended swimming pool." },
+  {
+    src: project1,
+    title: "Promenade Mall",
+    location: "Mombasa, Kenya",
+    category: "Commercial",
+    description:
+      "Multipurpose mall — concept & preliminary design, technical design of foundations, building frame, slabs, retaining walls, underground water tanks, and steel trusses.",
+  },
+  {
+    src: project2,
+    title: "Reflection Villas",
+    location: "Nairobi, Kenya",
+    category: "Residential",
+    description:
+      "6-unit modern residential development — full structural design, concept through technical design of all RC, masonry and steel elements.",
+  },
+  {
+    src: project3,
+    title: "Vision City",
+    location: "Kigali, Rwanda",
+    category: "Mixed-Use",
+    description:
+      "Major mixed-use urban development involving structural engineering, roads, drainage, and utility infrastructure.",
+  },
+  {
+    src: project4,
+    title: "Erbil Airport Cargo Terminal",
+    location: "Erbil, Iraq",
+    category: "Aviation",
+    description:
+      "Air cargo terminal concept design — structural design and civil engineering works at Erbil International Airport.",
+  },
+  {
+    src: project5,
+    title: "UGHE Campus",
+    location: "Butaro, Rwanda",
+    category: "Institutional",
+    description:
+      "University of Global Health Equity campus — structural and civil engineering for academic and residential facilities.",
+  },
+  {
+    src: project6,
+    title: "Catchup",
+    location: "Kigali, Rwanda",
+    category: "Mixed-Use",
+    description:
+      "Mixed-use development featuring residential and commercial spaces with modern structural design and sustainable infrastructure.",
+  },
+  {
+    src: project7,
+    title: "Kigali Finance Square",
+    location: "Kigali, Rwanda",
+    category: "Commercial",
+    description:
+      "28-storey office tower, 26-storey hotel tower, and 7-storey conference block with post-tension slabs and suspended swimming pool.",
+  },
 ];
 
 const HeroSection = () => {
@@ -31,7 +80,10 @@ const HeroSection = () => {
   }, []);
 
   const navigate = (dir: number) => {
-    setCurrent((prev) => (prev + dir + featuredProjects.length) % featuredProjects.length);
+    setCurrent(
+      (prev) =>
+        (prev + dir + featuredProjects.length) % featuredProjects.length,
+    );
   };
 
   return (
@@ -44,12 +96,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="flex-1 w-full"
-          >
+            className="flex-1 w-full">
             <div className="flex items-start justify-between gap-4">
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6">
-                Hello, I'm{" "}
-                <span className="text-gradient-gold">Rodrick!</span>
+                Hello, I'm <span className="text-gradient-gold">Rodrick!</span>
               </h1>
 
               {/* Mobile-only headshot (top-right, next to heading) */}
@@ -57,41 +107,49 @@ const HeroSection = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="md:hidden shrink-0"
-              >
+                className="md:hidden shrink-0">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-accent/30 bg-secondary overflow-hidden shadow-lg">
-                  <img src={headshot} alt="Rodrick — Civil & Structural Engineer" className="w-full h-full object-cover" />
+                  <img
+                    src={headshot}
+                    alt="Rodrick — Civil & Structural Engineer"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </motion.div>
             </div>
 
             <p className="text-muted-foreground text-base md:text-lg max-w-lg leading-relaxed">
-              I am an <span className="text-foreground font-semibold underline decoration-accent underline-offset-4">innovative</span> civil
-              & structural engineer skilled in{" "}
-              <span className="text-foreground font-semibold underline decoration-accent underline-offset-4">designing</span> and{" "}
-              <span className="text-foreground font-semibold underline decoration-accent underline-offset-4">delivering</span>{" "}
-              resilient infrastructure. Check out my recent works below.
+              Engineering resilient infrastructure across East Africa and beyond
+              from the structural framework of multi-storey towers and
+              commercial developments to highway and pavement systems.
             </p>
 
             <div className="flex flex-wrap gap-3 mt-8">
-              <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-semibold text-sm tracking-wide hover:shadow-elegant hover:-translate-y-0.5 transition-all">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-semibold text-sm tracking-wide hover:shadow-elegant hover:-translate-y-0.5 transition-all">
                 Get in Touch
               </a>
-              <a href="#projects" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-semibold text-sm tracking-wide hover:bg-secondary hover:border-accent/40 transition-all">
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground font-semibold text-sm tracking-wide hover:bg-secondary hover:border-accent/40 transition-all">
                 View Projects
               </a>
             </div>
           </motion.div>
 
-          {/* Desktop-only — Large circular headshot */}
+          {/* headshot */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="hidden md:block shrink-0"
-          >
+            className="hidden md:block shrink-0">
             <div className="md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full border-4 border-accent/30 bg-secondary overflow-hidden shadow-lg">
-              <img src={headshot} alt="Rodrick — Civil & Structural Engineer" className="w-full h-full object-cover" />
+              <img
+                src={headshot}
+                alt="Rodrick — Civil & Structural Engineer"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </div>
@@ -130,9 +188,10 @@ const HeroSection = () => {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <p className="text-accent-foreground/60 text-sm font-medium mb-2">{featuredProjects[current].location}</p>
+                  transition={{ duration: 0.4 }}>
+                  <p className="text-accent-foreground/60 text-sm font-medium mb-2">
+                    {featuredProjects[current].location}
+                  </p>
                   <h3 className="font-display text-3xl md:text-4xl font-bold text-accent-foreground mb-3">
                     {featuredProjects[current].title}
                   </h3>
@@ -144,47 +203,31 @@ const HeroSection = () => {
 
               {/* Navigation */}
               <div className="flex items-center gap-4 mt-6">
-                <button
-                  onClick={() => navigate(-1)}
-                  className="w-10 h-10 rounded-full bg-accent-foreground/10 hover:bg-accent-foreground/20 flex items-center justify-center text-accent-foreground transition-colors"
-                >
-                  <ChevronLeft size={20} />
-                </button>
                 <div className="flex gap-2">
                   {featuredProjects.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setCurrent(i)}
                       className={`h-2 rounded-full transition-all duration-300 ${
-                        i === current ? "w-6 bg-accent-foreground" : "w-2 bg-accent-foreground/30"
+                        i === current
+                          ? "w-6 bg-accent-foreground"
+                          : "w-2 bg-accent-foreground/30"
                       }`}
                       aria-label={`View project ${i + 1}`}
                     />
                   ))}
                 </div>
-                <button
-                  onClick={() => navigate(1)}
-                  className="w-10 h-10 rounded-full bg-accent-foreground/10 hover:bg-accent-foreground/20 flex items-center justify-center text-accent-foreground transition-colors"
-                >
-                  <ChevronRight size={20} />
-                </button>
               </div>
 
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-accent-foreground text-accent font-semibold text-sm tracking-wide hover:shadow-elegant hover:-translate-y-0.5 transition-all"
-              >
+                className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-accent-foreground text-accent font-semibold text-sm tracking-wide hover:shadow-elegant hover:-translate-y-0.5 transition-all">
                 Learn More
               </a>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <a href="#about" className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground/50 animate-bounce">
-        <ArrowDown size={24} />
-      </a>
     </section>
   );
 };
