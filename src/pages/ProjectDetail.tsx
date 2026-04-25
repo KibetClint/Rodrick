@@ -304,7 +304,7 @@ const ProjectDetail = () => {
                 <Link
                   to="/#contact"
                   className="mt-6 w-full inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-accent text-accent-foreground font-semibold text-sm hover:-translate-y-0.5 transition-all">
-                  Discuss a similar project
+                  Let's discuss your project
                 </Link>
               </div>
             </aside>
