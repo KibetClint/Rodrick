@@ -5,10 +5,12 @@ const Footer = () => (
         <p className="font-display text-2xl font-bold text-primary-foreground">
           Rodrick Cheruiyot<span className="text-gradient-gold">.</span>
         </p>
-        <p className="text-primary-foreground/60 text-sm">Managing Director · Brightspace Engineering</p>
+        <p className="text-primary-foreground/60 text-sm">
+          Managing Director · Brightspace Engineering
+        </p>
         <div className="w-12 h-px bg-accent/50 my-3" />
         <p className="text-primary-foreground/40 text-xs">
-          © {new Date().getFullYear()} Rodrick Cheruiyot. Built with precision.
+          © {new Date().getFullYear()} Rodrick Cheruiyot.
         </p>
       </div>
     </div>
